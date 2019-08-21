@@ -24,7 +24,10 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar
+        position="fixed"
+        style={{ backgroundColor: "#354e82", opacity: "0.9" }}
+      >
         <Toolbar>
           <Button color="inherit">Login</Button>
           <IconButton
