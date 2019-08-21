@@ -1,0 +1,13 @@
+.ImagesList {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  padding: 40px;
+}
