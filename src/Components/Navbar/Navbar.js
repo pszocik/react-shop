@@ -1,4 +1,6 @@
 import React from "react";
+import "typeface-roboto";
+
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -26,17 +28,32 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar
         position="fixed"
-        style={{ backgroundColor: "#354e82", opacity: "0.9" }}
+        style={{
+          backgroundColor: "#354e82",
+          opacity: "0.9"
+        }}
       >
         <Toolbar>
-          <Button color="inherit">Login</Button>
+          <Button
+            style={{
+              fontFamily: "Courier",
+              letterSpacing: "5px"
+            }}
+            color="inherit"
+          >
+            Login
+          </Button>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
           />
-          <Typography variant="h4" className={classes.title}>
+          <Typography
+            variant="h3"
+            style={{ fontFamily: "Courier", letterSpacing: "5px" }}
+            className={classes.title}
+          >
             Shop
           </Typography>
           <ShoppingBasketIcon />
