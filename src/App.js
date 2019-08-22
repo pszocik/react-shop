@@ -5,17 +5,17 @@ import Navbar from "./Components/Navbar/Navbar";
 import ImagesList from "./Components/ImagesList/ImagesList";
 import Footer from "./Components/Footer/Footer";
 import Particles from "react-particles-js";
+import Pagination from "./Components/Pagination/Pagination";
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage, setImagesPerPage] = useState(12);
+  const [imagesPerPage] = useState(12);
 
   useEffect(() => {
     const fetchImages = async () => {
       setLoading(true);
-      // const res =
       axios.get("Images.json").then(res => setImages(res.data));
       setLoading(false);
     };
@@ -78,12 +78,21 @@ const App = () => {
     }
   };
 
+  //Change page
+  const paginate = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="App">
       <Particles className="particles" params={params} />
-      v2.7.0
       <Navbar />
-      <ImagesList Images={currentImages} />
+      <ImagesList Images={currentImages} loading={loading} />
+      <Pagination
+        imagesPerPage={imagesPerPage}
+        totalImages={images.length}
+        paginate={paginate}
+      />
       <Footer />
     </div>
   );
