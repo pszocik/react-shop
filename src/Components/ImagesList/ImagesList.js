@@ -1,8 +1,7 @@
 import React from "react";
 import "./ImagesList.css";
-import Images from "./Images";
 
-export default function ImagesList() {
+export default function ImagesList({ Images }) {
   return (
     <div className="ImagesList">
       {Images.map(el => {

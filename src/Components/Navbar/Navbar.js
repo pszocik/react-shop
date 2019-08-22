@@ -36,7 +36,7 @@ const Navbar = () => {
         <Toolbar>
           <Button
             style={{
-              fontFamily: "Courier",
+              fontFamily: "Garamond",
               letterSpacing: "5px"
             }}
             color="inherit"
@@ -51,7 +51,7 @@ const Navbar = () => {
           />
           <Typography
             variant="h3"
-            style={{ fontFamily: "Courier", letterSpacing: "5px" }}
+            style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
             className={classes.title}
           >
             Shop
