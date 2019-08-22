@@ -29,20 +29,18 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: "#354e82",
+          backgroundColor: "white",
           opacity: "0.9"
         }}
       >
-        <Toolbar>
-          <Button
-            style={{
-              fontFamily: "Garamond",
-              letterSpacing: "5px"
-            }}
-            color="inherit"
-          >
-            Login
-          </Button>
+        <Toolbar
+          style={{
+            fontFamily: "Garamond",
+            letterSpacing: "5px",
+            color: "black"
+          }}
+        >
+          <Button color="inherit">Login</Button>
           <IconButton
             edge="start"
             className={classes.menuButton}
