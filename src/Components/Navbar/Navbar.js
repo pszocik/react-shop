@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   button: {
-    padding: 0
+    padding: 0,
+    fontSize: 23
   },
   icon: {
     width: "64px"
@@ -51,7 +52,7 @@ const Navbar = () => {
             Login
           </Button>
           <Typography
-            variant="h3"
+            variant="h2"
             style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
             className={classes.title}
           >
