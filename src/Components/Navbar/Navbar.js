@@ -1,6 +1,6 @@
 import React from "react";
 import "typeface-roboto";
-
+import "./Navbar.css";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -14,10 +14,17 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    margin: 0,
+    padding: 0
   },
   title: {
     flexGrow: 1
+  },
+  button: {
+    padding: 0
+  },
+  icon: {
+    width: "64px"
   }
 }));
 
@@ -40,13 +47,9 @@ const Navbar = () => {
             color: "black"
           }}
         >
-          <Button color="inherit">Login</Button>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          />
+          <Button className={classes.button} color="inherit">
+            Login
+          </Button>
           <Typography
             variant="h3"
             style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
@@ -54,7 +57,7 @@ const Navbar = () => {
           >
             Shop
           </Typography>
-          <ShoppingBasketIcon />
+          <ShoppingBasketIcon className={classes.icon} />
         </Toolbar>
       </AppBar>
     </div>

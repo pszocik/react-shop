@@ -19,7 +19,6 @@ const Footer = () => {
 
   return (
     <BottomNavigation
-      className="footer"
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);

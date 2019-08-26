@@ -39,7 +39,7 @@ const App = () => {
         random: true,
         anim: {
           speed: 6,
-          size_min: 0.3
+          size_min: 0.5
         }
       },
       line_linked: {
