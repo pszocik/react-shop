@@ -38,7 +38,7 @@ const App = () => {
         value: 3,
         random: true,
         anim: {
-          speed: 4,
+          speed: 6,
           size_min: 0.3
         }
       },
@@ -48,7 +48,7 @@ const App = () => {
       move: {
         random: true,
         speed: 1,
-        direction: "top",
+        direction: "bottom",
         out_mode: "out"
       }
     },
@@ -85,6 +85,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="content-wrap"></div>
       <Particles className="particles" params={params} />
       <Navbar />
       <ImagesList Images={currentImages} loading={loading} />
@@ -93,6 +94,7 @@ const App = () => {
         totalImages={images.length}
         paginate={paginate}
       />
+      <div />
       <Footer />
     </div>
   );
