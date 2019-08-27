@@ -8,6 +8,24 @@
   align-items: center;
 }
 
+.image {
+  width: 280px;
+  height: 340px;
+}
+
+.image-button {
+  position: relative;
+  bottom: 18%;
+  left: 19%;
+  margin: 0 5px 0 5px;
+  padding: 0px;
+  display: none;
+}
+
+.image:hover > .image-button {
+  display: inline-block;
+}
+
 img {
   margin: 20px 40px;
   box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
