@@ -1,19 +1,12 @@
-import React, { useState } from "react";
-import Payment from "../Payment/Payment";
+import React from "react";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
-const Image = ({ id, link }) => {
-  const [payment, showPayment] = useState(false);
-  const paymentPopUp = id => {
-    showPayment(!payment);
-  };
-
+const Image = ({ id, link, paymentPopUp }) => {
   return (
     <div key={id} className="image">
       <img key={id} alt={id} src={link} />
-      <button onClick={paymentPopUp} id={id} className="image-button">
-        <Payment />
+      <button onClick={() => paymentPopUp(id)} id={id} className="image-button">
         <MonetizationOnIcon />
       </button>
       <button className="image-button">

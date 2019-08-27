@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Payment from "./Components/Payment/Payment";
 import Navbar from "./Components/Navbar/Navbar";
 import ImagesList from "./Components/ImagesList/ImagesList";
 import Footer from "./Components/Footer/Footer";
@@ -9,14 +10,19 @@ import Pagination from "./Components/Pagination/Pagination";
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [id, setId] = useState(0);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(12);
+  const [payment, showPayment] = useState(false);
 
   useEffect(() => {
     const fetchImages = async () => {
       setLoading(true);
-      axios.get("Images.json").then(res => setImages(res.data));
+      setTimeout(function() {
+        axios.get("Images.json").then(res => setImages(res.data));
+      }, 1000);
+
       setLoading(false);
     };
     fetchImages();
@@ -78,9 +84,13 @@ const App = () => {
     }
   };
 
-  //Change page
   const paginate = pageNumber => {
     setCurrentPage(pageNumber);
+  };
+
+  const paymentPopUp = id => {
+    showPayment(!payment);
+    setId(id);
   };
 
   return (
@@ -88,7 +98,12 @@ const App = () => {
       <div className="content-wrap"></div>
       <Particles className="particles" params={params} />
       <Navbar />
-      <ImagesList Images={currentImages} loading={loading} />
+      <Payment id={id} payment={payment} paymentPopUp={paymentPopUp} />
+      <ImagesList
+        paymentPopUp={paymentPopUp}
+        Images={currentImages}
+        loading={loading}
+      />
       <Pagination
         imagesPerPage={imagesPerPage}
         totalImages={images.length}
