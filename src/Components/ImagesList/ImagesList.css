@@ -16,10 +16,11 @@
 .image-button {
   position: relative;
   bottom: 18%;
-  left: 19%;
+  left: 21%;
   margin: 0 5px 0 5px;
   padding: 0px;
   display: none;
+  animation: fadein 1s;
 }
 
 .image:hover > .image-button {

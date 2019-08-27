@@ -52,7 +52,7 @@ const Navbar = () => {
             Login
           </Button>
           <Typography
-            variant="h2"
+            variant="h3"
             style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
             className={classes.title}
           >
