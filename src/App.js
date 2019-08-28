@@ -10,7 +10,7 @@ import Pagination from "./Components/Pagination/Pagination";
 
 const App = () => {
   const [images, setImages] = useState([]);
-  const [id, setId] = useState(0);
+  const [imageInfo, setImageInfo] = useState({ id: 0, link: "" });
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(12);
@@ -88,9 +88,10 @@ const App = () => {
     setCurrentPage(pageNumber);
   };
 
-  const paymentPopUp = id => {
+  const paymentPopUp = (id, link) => {
     showPayment(!payment);
-    setId(id);
+    setImageInfo({ id, link });
+    console.log(imageInfo);
   };
 
   return (
@@ -98,7 +99,11 @@ const App = () => {
       <div className="content-wrap"></div>
       <Particles className="particles" params={params} />
       <Navbar />
-      <Payment id={id} payment={payment} paymentPopUp={paymentPopUp} />
+      <Payment
+        imageInfo={imageInfo}
+        payment={payment}
+        paymentPopUp={paymentPopUp}
+      />
       <ImagesList
         paymentPopUp={paymentPopUp}
         Images={currentImages}

@@ -9,7 +9,7 @@ const Image = ({ id, link, paymentPopUp }) => {
       <div className="image-button image-payment">
         <button
           className="image-button-payment"
-          onClick={() => paymentPopUp(id)}
+          onClick={() => paymentPopUp(id,link)}
           id={id}
         >
           <MonetizationOnIcon />
