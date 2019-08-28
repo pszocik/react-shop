@@ -69,3 +69,9 @@
     margin-top: -81px;
   }
 }
+
+.payment-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
