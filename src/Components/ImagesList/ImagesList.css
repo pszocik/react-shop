@@ -1,3 +1,4 @@
+/* List Style */
 .ImagesList {
   margin-top: 40px;
   padding: 20px;
@@ -12,29 +13,36 @@
   color: red;
 }
 
+/* Buttons */
+
 .image {
   width: 280px;
   height: 340px;
 }
 
+.image-text {
+  display: none;
+}
+
 .image-button {
   position: relative;
   bottom: 18%;
-  left: 21%;
+  left: 2%;
   margin: 0 5px 0 5px;
   padding: 0px;
   display: none;
   animation: fadein 1s;
 }
 
-.image-button {
-  transition: all 0.2s ease-in-out;
+.image-payment:hover {
+  padding-left: 60px;
 }
-.image-button:hover {
-  transform: scale(1.1);
-  width: 60px;
-  left: 12%;
-  /* add different id's to both buttons so that if you hover one stretch to the left and the other one changes position */
+
+.image-payment:hover + .image-cart {
+}
+
+.image-cart:hover {
+  padding-right: 60px;
 }
 
 .image-button:focus {
@@ -45,6 +53,7 @@
   display: inline-block;
 }
 
+/* Images Style and Animations */
 img {
   margin: 20px 40px;
   box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
