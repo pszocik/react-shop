@@ -8,10 +8,6 @@
   margin-left: -350px; /* negative half of width above */
   margin-top: -200px; /* negative half of height above */
   z-index: 1;
-  /* transform-origin: left top;
-  transition: transform 1s;
-  transform: rotate(720deg);
-  animation: fadein 0.5s; */
 }
 
 .popup {

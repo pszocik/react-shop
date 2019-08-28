@@ -27,8 +27,14 @@
   animation: fadein 1s;
 }
 
+.image-button {
+  transition: all 0.2s ease-in-out;
+}
 .image-button:hover {
-  background-color: #c8e6ce;
+  transform: scale(1.1);
+  width: 60px;
+  left: 12%;
+  /* add different id's to both buttons so that if you hover one stretch to the left and the other one changes position */
 }
 
 .image-button:focus {
