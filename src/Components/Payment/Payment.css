@@ -3,15 +3,13 @@
   background-color: white;
   top: 50%;
   left: 50%;
-  width: 700px; /* adjust as per your needs */
-  height: 400px; /* adjust as per your needs */
-  margin-left: -350px; /* negative half of width above */
-  margin-top: -200px; /* negative half of height above */
+  width: 700px;
+  height: 400px;
+  margin-left: -350px;
+  margin-top: -200px;
   z-index: 1;
-}
-
-.popup {
   animation: popup 0.7s;
+  opacity: 0.9;
 }
 
 @keyframes popup {
