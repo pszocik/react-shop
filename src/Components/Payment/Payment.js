@@ -2,22 +2,32 @@ import React from "react";
 import "./Payment.css";
 import CloseIcon from "@material-ui/icons/Close";
 
-const Payment = ({ payment, paymentPopUp, imageInfo }) => {
+const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
   if (payment)
     return (
       <div className="popup">
-        <button className="popup-close" onClick={paymentPopUp}>
+        <button className="popup-close" onClick={togglePaymentPopUp}>
           <CloseIcon />
         </button>
         <h2>Follow the next steps to finish your transaction</h2>
-        <h4>You've picked {imageInfo.id}#Photo</h4>
+        {cart.length > 1 ? (
+          <h4>You've picked {cart.length} items</h4>
+        ) : (
+          <h4>You've picked {cart.length} item </h4>
+        )}
+
         <div>
-          <img
-            alt={imageInfo.id}
-            src={imageInfo.link}
-            width="140"
-            height="210"
-          ></img>
+          {cart.map(el => {
+            return (
+              <img
+                alt={el.id}
+                key={el.id}
+                src={el.link}
+                width="70"
+                height="105"
+              ></img>
+            );
+          })}
         </div>
       </div>
     );

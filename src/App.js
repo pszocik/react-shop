@@ -10,6 +10,7 @@ import Pagination from "./Components/Pagination/Pagination";
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [cart, setCart] = useState([]);
   const [imageInfo, setImageInfo] = useState({ id: 0, link: "" });
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,14 +20,36 @@ const App = () => {
   useEffect(() => {
     const fetchImages = async () => {
       setLoading(true);
-      setTimeout(function() {
-        axios.get("Images.json").then(res => setImages(res.data));
-      }, 1000);
-
+      axios.get("Images.json").then(res => setImages(res.data));
       setLoading(false);
     };
     fetchImages();
   }, []);
+
+  const paginate = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
+
+  const togglePaymentPopUp = (id, link) => {
+    showPayment(!payment);
+  };
+
+  const addToCart = (id, link) => {
+    const arrIncludes = (arr, id) => {
+      for (let img of arr) {
+        if (img.id === id) {
+          return true;
+        }
+      }
+      return false;
+    };
+    const output = arrIncludes(cart, id);
+    if (output === false) {
+      setCart([...cart, { id, link }]);
+    } else if (output === true) {
+      alert("You already have that item in your cart!");
+    }
+  };
 
   const indexOfTheLastImage = currentPage * imagesPerPage;
   const indexOfTheFirstImage = indexOfTheLastImage - imagesPerPage;
@@ -84,16 +107,6 @@ const App = () => {
     }
   };
 
-  const paginate = pageNumber => {
-    setCurrentPage(pageNumber);
-  };
-
-  const paymentPopUp = (id, link) => {
-    showPayment(!payment);
-    setImageInfo({ id, link });
-    console.log(imageInfo);
-  };
-
   return (
     <div className="App">
       <div className="content-wrap"></div>
@@ -102,12 +115,14 @@ const App = () => {
       <Payment
         imageInfo={imageInfo}
         payment={payment}
-        paymentPopUp={paymentPopUp}
+        togglePaymentPopUp={togglePaymentPopUp}
+        cart={cart}
       />
       <ImagesList
-        paymentPopUp={paymentPopUp}
+        togglePaymentPopUp={togglePaymentPopUp}
         Images={currentImages}
         loading={loading}
+        addToCart={addToCart}
       />
       <Pagination
         imagesPerPage={imagesPerPage}

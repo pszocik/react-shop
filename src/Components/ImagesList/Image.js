@@ -2,14 +2,14 @@ import React from "react";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
-const Image = ({ id, link, paymentPopUp }) => {
+const Image = ({ id, link, togglePaymentPopUp, addToCart }) => {
   return (
     <div key={id} className="image">
       <img key={id} alt={id} src={link} />
       <div className="image-button image-payment">
         <button
           className="image-button-payment"
-          onClick={() => paymentPopUp(id,link)}
+          onClick={() => togglePaymentPopUp(id, link)}
           id={id}
         >
           <MonetizationOnIcon />
@@ -17,7 +17,7 @@ const Image = ({ id, link, paymentPopUp }) => {
       </div>
       <div className="image-button image-cart">
         <button className="image-button-cart">
-          <AddShoppingCartIcon />
+          <AddShoppingCartIcon onClick={() => addToCart(id, link)} />
         </button>
       </div>
     </div>
