@@ -19,16 +19,13 @@ const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
         <div className="payment-images">
           {cart.map(el => {
             return (
-              <div key={el.id}>
-                <img
-                  alt={el.id}
-                  key={el.id}
-                  src={el.link}
-                  width="35"
-                  height="52.5"
-                ></img>
-                <h3>{el.id}</h3>
-              </div>
+              <img
+                alt={el.id}
+                key={el.id}
+                src={el.link}
+                width="35"
+                height="52.5"
+              ></img>
             );
           })}
         </div>
