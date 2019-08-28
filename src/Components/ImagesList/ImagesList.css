@@ -1,4 +1,4 @@
-/* List Style */
+/* Component Style */
 .ImagesList {
   margin-top: 40px;
   padding: 20px;
@@ -12,45 +12,58 @@
 .loading-screen {
   color: red;
 }
-
 /* Buttons */
 
 .image {
   width: 280px;
   height: 340px;
-}
-
-.image-text {
-  display: none;
-}
-
-.image-button {
   position: relative;
-  bottom: 18%;
-  left: 2%;
-  margin: 0 5px 0 5px;
+}
+
+.image-payment {
+  position: absolute;
+  bottom: 20%;
+  right: 17%;
   padding: 0px;
   display: none;
   animation: fadein 1s;
+  cursor: pointer;
 }
 
-.image-payment:hover {
-  padding-left: 60px;
+.image-cart {
+  position: absolute;
+  bottom: 8%;
+  right: 17%;
+  padding: 0px;
+  display: none;
+  animation: fadein 1s;
+  cursor: pointer;
 }
 
-.image-payment:hover + .image-cart {
+.image-payment-text {
+  display: none;
 }
 
-.image-cart:hover {
-  padding-right: 60px;
+.image-button-payment:hover {
+  width: 125px;
+}
+
+.image-button-payment:hover:before {
+  content: "Purchase";
+  margin-right: 15px;
+}
+
+.image-button-cart:hover {
+  width: 125px;
+}
+
+.image-button-cart:hover:before {
+  margin-right: 15px;
+  content: "Add to cart";
 }
 
 .image-button:focus {
   box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
-}
-
-.image:hover > .image-button {
-  display: inline-block;
 }
 
 /* Images Style and Animations */
@@ -107,4 +120,8 @@ img {
   to {
     opacity: 1;
   }
+}
+
+.image:hover > .image-button {
+  display: inline-block;
 }
