@@ -17,6 +17,7 @@ const App = () => {
   const [imagesPerPage] = useState(12);
   const [payment, showPayment] = useState(false);
 
+  // I'm not sure if it's ok, have to check it
   setTimeout(function() {
     if (document.querySelector("#on") == null) {
       const firstPage = document.querySelector(".item1");
