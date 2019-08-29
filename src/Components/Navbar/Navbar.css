@@ -1,0 +1,6 @@
+.navbar-basket {
+  transition: all 0.9s ease-in-out;
+}
+.navbar-basket:hover {
+  transform: scale(1.6);
+}

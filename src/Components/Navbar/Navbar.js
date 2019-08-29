@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = () => {
+const Navbar = ({ togglePaymentPopUp }) => {
   const classes = useStyles();
 
   return (
@@ -57,7 +57,10 @@ const Navbar = () => {
           >
             Shop
           </Typography>
-          <ShoppingBasketIcon className={classes.icon} />
+          <ShoppingBasketIcon
+            className={`${classes.icon} navbar-basket`}
+            onClick={togglePaymentPopUp}
+          />
         </Toolbar>
       </AppBar>
     </div>

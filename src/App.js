@@ -23,7 +23,7 @@ const App = () => {
       const firstPage = document.querySelector(".item1");
       firstPage.id = "on";
     }
-  }, 500);
+  }, 800);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -40,16 +40,15 @@ const App = () => {
     setCurrentPage(pageNumber);
     const nextPage = document.querySelector(`.item${pageNumber}`);
     nextPage.id = "on";
-    // const currentPage = document.querySelector(`.item${pageNumber}`);
-    // currentPage.className=
-    // make it works!!!
   };
 
   const togglePaymentPopUp = (id, link) => {
     showPayment(!payment);
-    if (payment === false) {
-      if (arrIncludes(cart, id) === false) {
-        setCart([...cart, { id, link }]);
+    if (link !== undefined) {
+      if (payment === false) {
+        if (arrIncludes(cart, id) === false) {
+          setCart([...cart, { id, link }]);
+        }
       }
     }
   };
@@ -132,7 +131,7 @@ const App = () => {
     <div className="App">
       <div className="content-wrap"></div>
       <Particles className="particles" params={params} />
-      <Navbar />
+      <Navbar togglePaymentPopUp={togglePaymentPopUp} />
       <Payment
         imageInfo={imageInfo}
         payment={payment}

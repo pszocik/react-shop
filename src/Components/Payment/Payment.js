@@ -31,7 +31,7 @@ const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
             })}
           </div>
           <div className="payment-checkout">
-            <h4>You wil pay {cart.length * 0.5}$ for your items</h4>
+            <h4>You will pay {cart.length * 0.5}$ for your items</h4>
             <button>Pay via PayPal</button>
           </div>
         </div>
