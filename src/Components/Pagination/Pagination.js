@@ -10,7 +10,7 @@ const Pagination = ({ imagesPerPage, totalImages, paginate }) => {
     <nav>
       <ul className="pagination">
         {pageNumbers.map(number => (
-          <li key={number}>
+          <li className={`item item${number}`} key={number}>
             <a onClick={() => paginate(number)} href="!#">
               {number}
             </a>

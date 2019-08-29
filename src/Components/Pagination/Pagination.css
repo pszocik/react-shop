@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+.off {
+}
+
+.on {
+  background-color: black;
+}
+
 .pagination a {
   color: black;
   background-color: white;

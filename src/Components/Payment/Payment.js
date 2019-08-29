@@ -15,19 +15,25 @@ const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
         ) : (
           <h4>You've picked {cart.length} item </h4>
         )}
-
-        <div className="payment-images">
-          {cart.map(el => {
-            return (
-              <img
-                alt={el.id}
-                key={el.id}
-                src={el.link}
-                width="35"
-                height="52.5"
-              ></img>
-            );
-          })}
+        <div className="payment">
+          <div className="payment-images">
+            {cart.map(el => {
+              return (
+                <img
+                  alt={el.id}
+                  key={el.id}
+                  src={el.link}
+                  className="payment-images-single"
+                  width="63"
+                  height="93"
+                ></img>
+              );
+            })}
+          </div>
+          <div className="payment-checkout">
+            <h4>You wil pay {cart.length * 0.5}$ for your items</h4>
+            <button>Pay via PayPal</button>
+          </div>
         </div>
       </div>
     );

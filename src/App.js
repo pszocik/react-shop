@@ -27,22 +27,33 @@ const App = () => {
   }, []);
 
   const paginate = pageNumber => {
+    // const pages = document.querySelectorAll(".item");
+    // pages.className = `item item${}` + "off";
     setCurrentPage(pageNumber);
+    // const currentPage = document.querySelector(`.item${pageNumber}`);
+    // currentPage.className=
+    // make it works!!!
   };
 
   const togglePaymentPopUp = (id, link) => {
-    showPayment(!payment);
+    showPayment(!payment); ///REPAIR THIS
+    if (payment === false) {
+      if (arrIncludes(cart, id) === false) {
+        setCart([...cart, { id, link }]);
+      }
+    }
+  };
+
+  const arrIncludes = (arr, id) => {
+    for (let img of arr) {
+      if (img.id === id) {
+        return true;
+      }
+    }
+    return false;
   };
 
   const addToCart = (id, link) => {
-    const arrIncludes = (arr, id) => {
-      for (let img of arr) {
-        if (img.id === id) {
-          return true;
-        }
-      }
-      return false;
-    };
     const output = arrIncludes(cart, id);
     if (output === false) {
       setCart([...cart, { id, link }]);
