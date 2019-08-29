@@ -17,6 +17,13 @@ const App = () => {
   const [imagesPerPage] = useState(12);
   const [payment, showPayment] = useState(false);
 
+  setTimeout(function() {
+    if (document.querySelector("#on") == null) {
+      const firstPage = document.querySelector(".item1");
+      firstPage.id = "on";
+    }
+  }, 500);
+
   useEffect(() => {
     const fetchImages = async () => {
       setLoading(true);
@@ -27,16 +34,18 @@ const App = () => {
   }, []);
 
   const paginate = pageNumber => {
-    // const pages = document.querySelectorAll(".item");
-    // pages.className = `item item${}` + "off";
+    const page = document.querySelector(`.item${currentPage}`);
+    page.id = " ";
     setCurrentPage(pageNumber);
+    const nextPage = document.querySelector(`.item${pageNumber}`);
+    nextPage.id = "on";
     // const currentPage = document.querySelector(`.item${pageNumber}`);
     // currentPage.className=
     // make it works!!!
   };
 
   const togglePaymentPopUp = (id, link) => {
-    showPayment(!payment); ///REPAIR THIS
+    showPayment(!payment);
     if (payment === false) {
       if (arrIncludes(cart, id) === false) {
         setCart([...cart, { id, link }]);

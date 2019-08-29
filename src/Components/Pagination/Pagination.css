@@ -7,11 +7,9 @@
   padding: 0;
 }
 
-.off {
-}
-
-.on {
+#on {
   background-color: black;
+  color: white;
 }
 
 .pagination a {
