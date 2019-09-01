@@ -64,6 +64,12 @@ const App = () => {
 
   const addToCart = (id, link) => {
     const output = arrIncludes(cart, id);
+    const basket = document.querySelector(".navbar-basket");
+    basket.id = "basket-animation";
+    setTimeout(function() {
+      basket.id = " ";
+    }, 1000);
+
     if (output === false) {
       setCart([...cart, { id, link }]);
     } else if (output === true) {

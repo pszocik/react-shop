@@ -58,8 +58,8 @@ const Navbar = ({ togglePaymentPopUp }) => {
             Shop
           </Typography>
           <ShoppingBasketIcon
-            id="navbar-basket"
-            className={classes.icon}
+            
+            className={`${classes.icon} navbar-basket`}
             onClick={togglePaymentPopUp}
           />
         </Toolbar>
