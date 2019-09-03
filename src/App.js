@@ -7,6 +7,8 @@ import ImagesList from "./Components/ImagesList/ImagesList";
 import Footer from "./Components/Footer/Footer";
 import Particles from "react-particles-js";
 import Pagination from "./Components/Pagination/Pagination";
+import SignIn from "./Components/SignIn/SignIn"
+import 'tachyons';
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -144,6 +146,7 @@ const App = () => {
         togglePaymentPopUp={togglePaymentPopUp}
         cart={cart}
       />
+      <SignIn/>
       <ImagesList
         togglePaymentPopUp={togglePaymentPopUp}
         Images={currentImages}
