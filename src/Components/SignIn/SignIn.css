@@ -1,0 +1,18 @@
+.position-signin {
+  position: fixed;
+  background-color: white;
+  margin-left: 0;
+  left: 50%;
+  width: 254px;
+  height: 378px;
+  margin-left: -127px;
+  margin-top: -189px;
+  z-index: 1;
+  animation: popup 0.7s;
+  opacity: 0.9;
+}
+.popup-close-signin {
+  position: relative;
+  left: 40.2%;
+  margin-top: 5px;
+}

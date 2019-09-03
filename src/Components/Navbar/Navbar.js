@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navbar = ({ togglePaymentPopUp }) => {
+const Navbar = ({ togglePaymentPopUp, toggleSignUpForm }) => {
   const classes = useStyles();
 
   return (
@@ -47,7 +47,11 @@ const Navbar = ({ togglePaymentPopUp }) => {
             color: "black"
           }}
         >
-          <Button className={classes.button} color="inherit">
+          <Button
+            className={classes.button}
+            onClick={toggleSignUpForm}
+            color="inherit"
+          >
             Login
           </Button>
           <Typography
@@ -58,7 +62,6 @@ const Navbar = ({ togglePaymentPopUp }) => {
             Shop
           </Typography>
           <ShoppingBasketIcon
-            
             className={`${classes.icon} navbar-basket`}
             onClick={togglePaymentPopUp}
           />

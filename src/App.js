@@ -7,17 +7,18 @@ import ImagesList from "./Components/ImagesList/ImagesList";
 import Footer from "./Components/Footer/Footer";
 import Particles from "react-particles-js";
 import Pagination from "./Components/Pagination/Pagination";
-import SignIn from "./Components/SignIn/SignIn"
-import 'tachyons';
+import SignIn from "./Components/SignIn/SignIn";
+import "tachyons";
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [cart, setCart] = useState([]);
-  const [imageInfo, setImageInfo] = useState({ id: 0, link: "" });
+  const [imageInfo] = useState({ id: 0, link: "" });
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(12);
   const [payment, showPayment] = useState(false);
+  const [loginForm, showLoginForm] = useState(false);
 
   // I'm not sure if it's ok, have to check it
   setTimeout(function() {
@@ -53,6 +54,10 @@ const App = () => {
         }
       }
     }
+  };
+
+  const toggleSignUpForm = () => {
+    showLoginForm(!loginForm);
   };
 
   const arrIncludes = (arr, id) => {
@@ -139,14 +144,17 @@ const App = () => {
     <div className="App">
       <div className="content-wrap"></div>
       <Particles className="particles" params={params} />
-      <Navbar togglePaymentPopUp={togglePaymentPopUp} />
+      <Navbar
+        togglePaymentPopUp={togglePaymentPopUp}
+        toggleSignUpForm={toggleSignUpForm}
+      />
       <Payment
         imageInfo={imageInfo}
         payment={payment}
         togglePaymentPopUp={togglePaymentPopUp}
         cart={cart}
       />
-      <SignIn/>
+      {loginForm ? <SignIn toggleSignUpForm={toggleSignUpForm} /> : ""}
       <ImagesList
         togglePaymentPopUp={togglePaymentPopUp}
         Images={currentImages}

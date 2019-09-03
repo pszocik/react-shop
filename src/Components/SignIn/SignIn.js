@@ -1,9 +1,14 @@
 import React from "react";
+import "./SignIn.css";
+import CloseIcon from "@material-ui/icons/Close";
 
-const SignIn = () => {
+const SignIn = ({ toggleSignUpForm }) => {
   return (
-    <article className="br2 ba dark-gray b--white-10 mv4 w-100 w-50-m w-25-l mw5 center">
-      <main className="pa4 white-80">
+    <article className="br2 ba dark-gray b--white-10 mv4 w-100 w-50-m w-25-l mw5 position-signin">
+      <button onClick={toggleSignUpForm} className="popup-close-signin">
+        <CloseIcon />
+      </button>
+      <main className="pa4 black-80">
         <form className="measure center">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
             <legend className="f4 fw6 ph0 mh0">Sign In</legend>
@@ -38,10 +43,10 @@ const SignIn = () => {
             />
           </div>
           <div className="lh-copy mt3">
-            <a href="#0" className="f6 link dim white db">
+            <a href="#0" className="f6 link dim black db">
               Sign up
             </a>
-            <a href="#0" className="f6 link dim white db">
+            <a href="#0" className="f6 link dim black db">
               Forgot your password?
             </a>
           </div>
