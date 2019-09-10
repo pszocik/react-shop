@@ -26,9 +26,7 @@ const Footer = () => {
       showLabels
       className={"BottomNavigation" + classes.root}
     >
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      <p>Copyright © 2019 Piotr Szocik</p>
     </BottomNavigation>
   );
 };

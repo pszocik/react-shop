@@ -59,7 +59,7 @@ const Navbar = ({ togglePaymentPopUp, toggleSignUpForm }) => {
             style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
             className={classes.title}
           >
-            Shop
+            Stock Images Shop
           </Typography>
           <ShoppingBasketIcon
             className={`${classes.icon} navbar-basket`}
