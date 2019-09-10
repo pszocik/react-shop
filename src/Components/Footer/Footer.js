@@ -26,7 +26,7 @@ const Footer = () => {
       showLabels
       className={"BottomNavigation" + classes.root}
     >
-      <p>Copyright © 2019 Piotr Szocik</p>
+      <h4>Copyright © 2019 Piotr Szocik</h4>
     </BottomNavigation>
   );
 };

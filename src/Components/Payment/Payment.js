@@ -1,6 +1,7 @@
 import React from "react";
 import "./Payment.css";
 import CloseIcon from "@material-ui/icons/Close";
+import Paypal from "./Paypal";
 
 const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
   if (payment)
@@ -32,7 +33,9 @@ const Payment = ({ payment, togglePaymentPopUp, imageInfo, cart }) => {
           </div>
           <div className="payment-checkout">
             <h4>You will pay {cart.length * 0.5}$ for your items</h4>
-            <button>Pay via PayPal</button>
+            <div style={{ width: "200px", margin: "50px" }}>
+              <Paypal />
+            </div>
           </div>
         </div>
       </div>

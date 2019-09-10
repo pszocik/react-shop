@@ -41,9 +41,10 @@ const Navbar = ({ togglePaymentPopUp, toggleSignUpForm }) => {
         }}
       >
         <Toolbar
+          variant="h5"
           style={{
             fontFamily: "Garamond",
-            letterSpacing: "5px",
+            letterSpacing: "2px",
             color: "black"
           }}
         >
@@ -55,8 +56,8 @@ const Navbar = ({ togglePaymentPopUp, toggleSignUpForm }) => {
             Login
           </Button>
           <Typography
-            variant="h3"
-            style={{ fontFamily: "Garamond", letterSpacing: "5px" }}
+            variant="h4"
+            style={{ fontFamily: "Garamond", letterSpacing: "3px" }}
             className={classes.title}
           >
             Stock Images Shop
